@@ -1,0 +1,5 @@
+{
+    "opencode.apiBaseUrl": "http://localhost:3001/v1",
+    "opencode.apiKey": "dummy-key",
+    "opencode.model": "claude-code"
+}

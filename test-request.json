@@ -1,0 +1,9 @@
+{
+    "model": "claude-code",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Hello, what can you do?"
+        }
+    ]
+}

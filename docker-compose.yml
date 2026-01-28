@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  claude-api:
+    build: .
+    container_name: claude-code-api
+    ports:
+      - "3000:3000"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - POOL_SIZE=${POOL_SIZE:-5}
+      - IDLE_TIMEOUT_MS=${IDLE_TIMEOUT_MS:-300000}
+      - PORT=3000
+      - WORKSPACE_DIR=/workspace
+    volumes:
+      # Mount your project files here
+      - ./workspace:/workspace
+      # Persist Claude sessions across container restarts
+      - claude-sessions:/root/.claude
+    restart: unless-stopped
+    # Resource limits (adjust as needed)
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 1G
+
+volumes:
+  claude-sessions:
+    name: claude-code-sessions

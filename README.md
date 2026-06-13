@@ -21,7 +21,7 @@ OpenAI-compatible API wrapper for Claude Code CLI. Enables any OpenAI-compatible
 
 2. **Start with Docker Compose:**
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
 
 3. **Test the API:**
